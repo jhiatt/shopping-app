@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      1 of 2
+
+    <h1 class="imagine">Enjoy our of products:</h1>
+    <div class="imagine">
+    <% @products.each do |product| %>
+    <p> <a style="color: purple;" href="/products/<%=  product.id %>"> <%= product.name %></a></p>
+     <p>$<%= product.price %></p> 
+     <p><img src="<%= product.image %>" alt=""></p> 
+     <p>"<%= product.description %>"</p> 
+      <% end %></div>  
+ </div>
+  </div>
+</div>
