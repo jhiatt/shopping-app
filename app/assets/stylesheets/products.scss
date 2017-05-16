@@ -3,16 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-image: url(https://www.daz3d.com/forums/uploads/thumbnails/FileUpload/5b/398749c65a6be273811a14073ae6c7.jpg);
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  //background-image: url(https://www.daz3d.com/forums/uploads/thumbnails/FileUpload/5b/398749c65a6be273811a14073ae6c7.jpg);
+  background-image: url('weather.png')
 }
 
 .imagine {
   div {
-    border: 5px solid black;
+    border: 5px solid #21B6EE;
   }
 }
 
 img {
-  height: 75px;
-  width: 75px;
+  //height: 50px;
+  width: 100%;
+
+}
+
+.container {
+  //border-color: blue;
 }

@@ -1,18 +1,24 @@
-<div class="container">
+<a href="/products/new">Create new Product</a>
+
+
+    <h1 class="imagine">Enjoy our products:</h1>
+
+<div class="imagine">
+<% @products.each_slice(3) do |products_slice| %>
+
   <div class="row">
-    <div class="col">
-      1 of 2
+    <% products_slice.each do |product| %>
 
-    <h1 class="imagine">Enjoy our of products:</h1>
-    <div class="imagine">
-    <% @products.each do |product| %>
-    <p> <a style="color: purple;" href="/products/<%=  product.id %>"> <%= product.name %></a></p>
-     <p>$<%= product.price %></p> 
-     <p><img src="<%= product.image %>" alt=""></p> 
-     <p>"<%= product.description %>"</p> 
-      <p><a href="/products/<%= product.id %>/edit">Edit</a></p> 
+      <div class="col-md-4">
+          <p> <a style="color: purple;" href="/products/<%=  product.id %>"> <%= product.name %></a></p>
+          <p>$<%= product.price %></p> 
+          <p><img src="<%= product.image %>" alt=""></p> 
+          <p>"<%= product.description %>"</p> 
+          <p><a href="/products/<%= product.id %>/edit">Edit</a></p> 
+      </div>  
 
-      <% end %></div>  
- </div>
+    <% end %>
   </div>
+
+<% end %>
 </div>
