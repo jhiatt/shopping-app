@@ -1,7 +1,21 @@
 <h1><%= @product.name %></h1>
-<p>Image: <img src="<%= @product.image %>" alt=""></p>
+<h3><%= @product.sale_message %></h3>
+<p>Image: <% @product.images.each do |image| %>
+    <img src="<%= image.url %>" alt=""></p>
+  <% end %>
+<% if @price.to_f < 20 %>
+<p class=discount >Price: <%= @product.price %></p>
+<% else %>
 <p>Price: <%= @product.price %></p>
+<% end %>
 <p>Description: <%= @product.description %></p>
+<p>Tax: <%= number_to_currency(@product.tax) %></p>
+<p>After tax price: <%= @product.total %></p>
+<p>Supplier: 
+  <%= @product.supplier.name %>
+  | email: <%= @product.supplier.email %>
+  | phone: <%= @product.supplier.phone %>
+</p>
 
 <p><%= form_tag "/products/#{@product.id}", method: :delete do %>
   <input type="submit" value="destroy">
@@ -11,3 +25,4 @@
 <p><%= link_to "DESTROY!!", "/products/#{@product.id}", method: :delete %></p>
 
 <p><%= button_to "DESTROY!!", "/products/#{@product.id}", method: :delete %></p>
+

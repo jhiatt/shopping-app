@@ -12,7 +12,7 @@
       <div class="col-md-4">
           <p> <a style="color: purple;" href="/products/<%=  product.id %>"> <%= product.name %></a></p>
           <p>$<%= product.price %></p> 
-          <p><img src="<%= product.image %>" alt=""></p> 
+          <p><img src="<%= product.images.first.url %>" alt=""></p> 
           <p>"<%= product.description %>"</p> 
           <p><a href="/products/<%= product.id %>/edit">Edit</a></p> 
       </div>  
@@ -22,3 +22,15 @@
 
 <% end %>
 </div>
+
+
+<p><%= link_to "Sort by Price, low to high", "/products?sort=price", method: :get %></p>
+<p><%= link_to "Sort by Price, high to low", "/products?sort_desc=price", method: :get %></p>
+<p><%= link_to "Show discount items", "/products?discount=price", method: :get %></p>
+<!-- <p><%# link_to "Feeling Lucky (tm google)", "/products/#{Product.all.sample.id}", method: :get %></p> -->
+<p><%= link_to "Feeling Lucky (tm google)", "/products/rand", method: :get %></p>
+
+<%= form_tag "/products/search", method: :get do %>
+<div> Search for a product: <input type="text" name="search"> </div>
+  <div> <input type="submit" value="Go"></div>
+  <% end %>
