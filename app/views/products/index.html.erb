@@ -1,3 +1,7 @@
+<% if current_user %>
+<h1>Hey <%= current_user.name %>!</h1>
+<% end %>
+
 <a href="/products/new">Create new Product</a>
 
 
@@ -34,3 +38,6 @@
 <div> Search for a product: <input type="text" name="search"> </div>
   <div> <input type="submit" value="Go"></div>
   <% end %>
+
+
+  <div>You have visited <%= @counter %> times. You're obsessed.</div>

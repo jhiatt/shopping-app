@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   patch "/products/:id", to: 'products#update'
   delete "/products/:id", to: 'products#destroy'
 
-
+#supplier routes
   get "/suppliers", to: 'suppliers#index'
   get "/suppliers/new", to: 'suppliers#new'
   post "/suppliers", to: 'suppliers#create'
@@ -18,4 +18,18 @@ Rails.application.routes.draw do
   get "/suppliers/:id/edit", to: 'suppliers#edit'
   patch "/suppliers/:id", to: 'suppliers#update'
   delete "/products/:id", to: 'suppliers#destory'
+
+#User routes
+  get "/signup", to: 'users#new'
+  post "/users", to: 'users#create'
+
+#sessions routes
+  get "/login", to: 'sessions#new'
+  post "/login", to: 'sessions#create'
+  get "/logout", to: 'sessions#destroy'
+
+#Order routes
+  post "/orders/:product_id", to: 'orders#create'
+  get "/orders/:id", to: 'orders#show'
+
 end

@@ -17,6 +17,13 @@
   | phone: <%= @product.supplier.phone %>
 </p>
 
+<h3>Buy Now!</h3>
+<%= form_tag "/orders/#{@product.id}", method: :post do%>
+<p>How many would you like?<input type="text" name="quantity"></p>
+<!-- <p>product id:<input type="text" name="product_id" value="<%= @product.id %>"></p> -->
+<p><input type="submit" value="Order!"></p>
+<% end %>
+
 <p><%= form_tag "/products/#{@product.id}", method: :delete do %>
   <input type="submit" value="destroy">
   <% end %>

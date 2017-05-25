@@ -1,6 +1,14 @@
 class ProductsController < ApplicationController
 
 def index
+  if session[:counter]
+    session[:counter] += 1
+  else
+    session[:counter] = 1
+  end
+
+  @counter = session[:counter]
+
   @products = Product.all
 
   if params[:sort]
@@ -11,10 +19,7 @@ def index
 
   elsif params[:discount]
     @products = Product.where("price < ?", 20)
-
   end
-
-
   render "index.html.erb"
 end
 
