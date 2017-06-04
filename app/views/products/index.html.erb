@@ -16,7 +16,7 @@
       <div class="col-md-4">
           <p> <a style="color: purple;" href="/products/<%=  product.id %>"> <%= product.name %></a></p>
           <p>$<%= product.price %></p> 
-          <p><img src="<%= product.images.first.url %>" alt=""></p> 
+          <p><img src="<%= product.images.first.url if product.images.any? %>" alt=""></p> 
           <p>"<%= product.description %>"</p> 
           <p><a href="/products/<%= product.id %>/edit">Edit</a></p> 
       </div>  

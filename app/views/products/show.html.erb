@@ -16,6 +16,13 @@
   | email: <%= @product.supplier.email %>
   | phone: <%= @product.supplier.phone %>
 </p>
+<!-- <p>Category:
+<ul>
+<% #@product.categories.each do |category| %>
+  <li></li>
+  <% #end %>
+</ul>
+</p> -->
 
 <h3>Buy Now!</h3>
 <%= form_tag "/orders/#{@product.id}", method: :post do%>

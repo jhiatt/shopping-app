@@ -1,0 +1,10 @@
+<h1><%= heading %></h1>
+
+<%= form_tag url, method: form_method do %>
+  <div> Name: <input type="text" value="<%= @product.name %>" name="name_param"></div>
+  <div> Price: <input type="text" value="<%= @product.price.to_i %>" name="price_param"></div>
+  <div> Image URL: <input type="text" name="image_param"></div>
+  <div> Description: <input type="text" value="<%= @product.description %>" name="description_param"> </div>
+  <div> Supplier: <input type="text" value="<%= @product.supplier_id %>" name="supplier"> </div>
+  <div> <input type="submit" value=<%= button_name %> ></div>
+<% end %>
